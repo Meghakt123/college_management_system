@@ -1,0 +1,43 @@
+{% extends 'admin_template/skydash.html' %}
+{% block content %}
+
+
+
+<br>
+
+<div class="table-responsive">
+    <div class="card">
+<div class="card-header" style="">
+    <h4><strong class="card-tile" style="text-align:center;color:black;">NOTIFICATIONS</strong></h4>
+</div>
+    <div class="card-body">
+<table class="table table-bordered table-secondary">
+  <thead>
+  <br>
+    <tr>
+      <th scope="col">SI no</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Content</th>
+      <th scope="col">Updated</th>
+      <th scope="col">Created</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.subject}}</td>
+      <td>{{i.content}}</td>
+      <td>{{i.updated}}</td>
+       <td>{{i.created}}</td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+  </div>
+    </div>
+
+</div>
+{% endblock %}

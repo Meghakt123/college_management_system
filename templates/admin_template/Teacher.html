@@ -1,0 +1,40 @@
+{% extends 'admin_template/skydash.html' %}
+{% block content %}
+
+<br>
+<div class="table-responsive">
+    <div class="card">
+<div class="card-header" style="">
+    <h4><strong class="card-tile" style="text-align:center;color:black;">STAFF DETAILS</strong></h4>
+</div>
+    <div class="card-body">
+<table class="table table-bordered table-secondary">
+  <thead>
+    <tr style="text-align:center;">
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">USER NAME</th>
+      <th scope="col">CONTACT NUMBER</th>
+      <th scope="col">ADDRESS</th>
+    </tr>
+  </thead>
+  <tbody>
+  <br>
+  {% for i in data %}
+    <tr style="background-color:white">
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Name}}</td>
+      <td>{{i.username}}</td>
+      <td>{{i.Contact_Number}}</td>
+      <td>{{i.address}}</td>
+      <td><a href="{% url 'teacher_update' i.id %}" class="btn btn-success">update</a></td>
+      <td><a href="{% url 'teacher_delete' i.id %}" class="btn btn-danger">delete</a></td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+  </div>
+
+{% endblock %}

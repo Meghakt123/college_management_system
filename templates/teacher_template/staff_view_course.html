@@ -1,0 +1,29 @@
+{% extends 'teacher_template/teacher_dashboard.html' %}
+{% block content %}
+<div class="table-responsive">
+<table class="table table-bordered table-secondary">
+  <thead>
+    <tr>
+      <th scope="col">SI no</th>
+      <th scope="col">Course</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Fee</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in data %}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{i.Name}}</td>
+      <td>{{i.Duration}}</td>
+      <td>{{i.Fee}}</td>
+       <td>{{i.Description}}</td>
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+  </div>
+{% endblock %}

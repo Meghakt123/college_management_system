@@ -1,0 +1,26 @@
+{% extends 'student_template/student_dashboard.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<!-- <div class="card-header">-->
+<!--   <h1 class="text-center"> Notifications </h1>-->
+<!--<hr>-->
+<!-- </div>-->
+<!--<h1 class="text-center"> Notifications </h1>-->
+{% for notification in notifications %}
+<div class="container mt-4">
+
+
+  <div class="card" style="width:600px;margin-left:20%">
+    <div class="card-body">
+      <h3 class="card-subtitle style mb-2 bg-$blue-200 text-light p-1 my-1 text-light"style="background-color: #985f0d;text-align: center;color:#ffffff; border: solid 1px; border-color:#96a2b">{{notification.subject}}</h3>
+    <p class="card-text">{{notification.content}}</p>
+      <p class="card-text">
+        <small class="text-muted">{{notification.created}}</small>
+      </p>
+
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

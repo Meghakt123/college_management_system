@@ -1,0 +1,20 @@
+{% extends 'teacher_template/teacher_dashboard.html' %}
+{% block content %}
+
+<div class="card"style="width:18rem;height:20rem;margin-left:1%;margin-top:5%;">
+<div class="card-header" style="background-color:darkblue;">
+    <h3 class="card-title" style="color:white;">Mark Attendance</h3>
+  </div>
+
+<div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+    <input type="radio"  name="attendance" value="Present" required>
+<label>Present</label><br><br>
+<input type="radio"  name="attendance" value="Absent" required>
+<label>Absent</label><br><br><br><br><br>
+<input type = "submit" class="btn btn-primary" value="submit" style="margin-bottom:-6%;">
+      </form>
+  </div>
+</div>
+{% endblock %}
